@@ -46,16 +46,7 @@
         $monthDays = date("t", strtotime($firstDay));
         $lastDay = date("Y-") . $month . "-" . $monthDays;
         $today = date("Y-m-d");
-        // print("Month" . $month);
-        // print("<br>");
-        // print("First Day" . $firstDay);
-        // print("<br>");
-        // print("weekday" . $firstWeekday);
-        // print("<br>");
-        // print("The last day" . $lastDay);
-        // print("<br>");
-        // print("Total Days" . $monthDays);
-        // print("<br>");
+
         for ($i = 0; $i < 6; $i++) {
             print "<tr>";
             for ($j = 0; $j < 7; $j++) {
