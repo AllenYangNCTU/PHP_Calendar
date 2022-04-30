@@ -27,10 +27,6 @@
             margin-top: -1px;
             text-align: center;
         }
-        p{
-            font-size: 24px;
-            color:red;
-        }
         .table div.header {
             background: black;
             color: yellow;
@@ -54,9 +50,12 @@
         }
         .workdayfont{
             color: black;
+            font-size: 24px;
         }
         .holidayfont{
             color: olivedrab;
+            font-size: 40px;
+            line-height: 5px;
         }
     </style>
 </head>

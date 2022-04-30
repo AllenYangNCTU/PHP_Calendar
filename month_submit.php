@@ -11,18 +11,18 @@
    <form name="calendar" method="post" action="calendar_flex.php">
       Pleas choose the month you want to check.
    <select name="month">
-         <option> Jan </option>
-         <option> Feb </option>
-         <option> Mar </option>
-         <option> Apr </option>
+         <option> January </option>
+         <option> February </option>
+         <option> March </option>
+         <option> April </option>
          <option> May </option>
-         <option> Jun </option>
-         <option> Jul </option>
-         <option> Aug </option>
-         <option> Sep </option>
-         <option> Oct </option>
-         <option> Nov </option>
-         <option> Dec </option>
+         <option> June </option>
+         <option> July </option>
+         <option> August </option>
+         <option> September </option>
+         <option> October </option>
+         <option> November </option>
+         <option> December </option>
    </select>
          <BR>
          <input type="submit" value="submit">
