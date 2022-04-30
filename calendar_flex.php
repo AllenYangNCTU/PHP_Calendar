@@ -25,13 +25,17 @@
             box-sizing: border-box;
             margin-left: -1px;
             margin-top: -1px;
+            text-align: center;
         }
-
+        p{
+            font-size: 24px;
+            color:red;
+        }
         .table div.header {
             background: black;
-            color: white;
+            color: yellow;
             height: 32px;
-            ;
+            text-align: center;
         }
 
         .weekend {
@@ -48,14 +52,37 @@
         .othermonth{
             background: lightgreen;
         }
+        .workdayfont{
+            color: black;
+        }
+        .holidayfont{
+            color: olivedrab;
+        }
     </style>
 </head>
 
 <body>
-    <h1>Method : flex</h1>
-    <?php
-    $month = 6;
-
+    <form name="calendar" method="post" action="calendar_flex.php">
+      Pleas choose the month you want to check.
+   <select name="month">
+         <option> January </option>
+         <option> February </option>
+         <option> March </option>
+         <option> April </option>
+         <option> May </option>
+         <option> June </option>
+         <option> July </option>
+         <option> Augst </option>
+         <option> September </option>
+         <option> October </option>
+         <option> November </option>
+         <option> December </option>
+   </select>
+         <BR>
+         <input type="submit" value="submit">
+   </form>
+<?php
+    $month = $_POST["month"];
     $firstDay = date("Y-") . $month . "-1";
     $firstWeekday = date("w", strtotime($firstDay));
     $monthDays = date("t", strtotime($firstDay));
@@ -77,7 +104,7 @@
         $dateArray[] = "";
     }
     ?>
-
+    <h1>The month you choose is </h1><h1><?php print($month);?></h1>
     <div class="table">
         <div class='header'>Sun</div>
         <div class='header'>Mon</div>
@@ -89,19 +116,16 @@
         <?php
         foreach ($dateArray as $k => $day) {
             $holiday = ($k % 7 == 0 || $k % 7 == 6) ? 'weekend' : "workday";
+            $pfont = ($k % 7 == 0 || $k % 7 == 6) ? 'holidayfont' : "workdayfont";
             if (!empty($day)) {
                 $dayFormat = date("j", strtotime($day));
-                echo "<div class='{$holiday}'>{$dayFormat}</div>";
+                echo "<div class='{$holiday}'><p class='{$pfont}'>{$dayFormat}</p></div>";
             } else {
                 echo "<div class='othermonth'></div>";
             }
         }
-
         ?>
     </div>
-
-
-
 </body>
 
 </html>
